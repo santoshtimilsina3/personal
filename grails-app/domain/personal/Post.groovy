@@ -4,6 +4,7 @@ class Post {
 
     String content
 
+    static hasOne = [category:Category]
     static hasMany = [like:Likes]
 
     static constraints = {
