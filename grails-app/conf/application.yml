@@ -14,6 +14,9 @@ info:
         version: '@info.app.version@'
         grailsVersion: '@info.app.grailsVersion@'
 spring:
+    autoconfigure:
+        exclude:
+            - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
     jmx:
         unique-names: true
     main:
@@ -104,7 +107,7 @@ dataSource:
 environments:
     development:
         dataSource:
-            dbCreate: update
+            dbCreate: create-drop
             url: jdbc:mysql://localhost:3306/merolekh
             username: "developer"
             password: "java11"
